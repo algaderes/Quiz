@@ -1,0 +1,160 @@
+{
+    "ar": {
+        "0-10": [
+            "النتيجة ضعيفة، لازم ترجع من الأساس",
+            "واضح ماكو تحضير كافي",
+            "أداء بعيد كلش عن المطلوب",
+            "المادة مو داخلة براسك هسه",
+            "تحتاج إعادة كاملة للمراجعة"
+        ],
+        "11-20": [
+            "بداية موجودة بس غير مستقرة",
+            "الفهم بعده ضعيف ويحتاج شغل",
+            "أكو معلومات متفرقة مو مترابطة",
+            "مو واصل لمستوى الأساس بعد",
+            "لازم تركّز أكثر بالمحاضرات"
+        ],
+        "21-30": [
+            "أكو تحسن بسيط بس بعده مو كافي",
+            "بعض الأفكار وصلت بس مو كاملة",
+            "قاعد تتقدم بس ببطء",
+            "الفهم بعده جزئي",
+            "تحتاج تثبيت للمعلومات"
+        ],
+        "31-40": [
+            "المستوى متوسط وما زال يحتاج رفع",
+            "أكو فهم بس مو ثابت",
+            "أحسن من قبل بس بعده ناقص",
+            "يمشي الحال بس مو قوي",
+            "تحتاج تركيز أكثر على التفاصيل"
+        ],
+        "41-50": [
+            "نص الطريق تقريباً",
+            "مستوى مقبول بس مو قوي",
+            "أكو أساسات واضحة",
+            "بعده يحتاج شغل إضافي",
+            "النتيجة وسط وما بيها ثبات"
+        ],
+        "51-60": [
+            "مستوى زين وبداية اعتماد على الفهم",
+            "أكو استيعاب جيد للمادة",
+            "الأداء مقبول وفوق المتوسط",
+            "صرت قريب من الجيد",
+            "تقدم واضح بس يحتاج تثبيت"
+        ],
+        "61-70": [
+            "مستوى جيد ومرتب",
+            "الفهم صار أوضح بكثير",
+            "أداء مضبوط أغلبه صحيح",
+            "قريب من الجيد جداً",
+            "مجهود واضح بالحل"
+        ],
+        "71-80": [
+            "مستوى قوي ومتمكن",
+            "تفكيرك بالمادة صار ثابت",
+            "أداء عالي ومستقر",
+            "واضح الفهم مضبوط",
+            "نتيجة ترفع الرأس"
+        ],
+        "81-90": [
+            "مستوى ممتاز وقريب من الاحتراف",
+            "تفاصيل المادة مسيطر عليها",
+            "أداء قوي جداً",
+            "فهم عميق وواضح",
+            "شغل متقدم ومرتب"
+        ],
+        "91-99": [
+            "مستوى شبه كامل",
+            "سيطرة قوية على المادة",
+            "أداء دقيق جداً",
+            "ماكو أخطاء تقريباً",
+            "مستوى عالي جداً"
+        ],
+        "100": [
+            "درجة كاملة بدون نقص",
+            "أداء مثالي بكل التفاصيل",
+            "سيطرة كاملة على المادة",
+            "ماكو أي خطأ",
+            "مستوى استثنائي"
+        ]
+    },
+    "en": {
+        "0-10": [
+            "Poor result. You need to start from the basics.",
+            "Lack of preparation is evident.",
+            "Performance is far from required.",
+            "You haven't grasped the material yet.",
+            "Full revision is necessary."
+        ],
+        "11-20": [
+            "Small start, but very unstable.",
+            "Understanding is weak and needs work.",
+            "Scattered information, not yet connected.",
+            "Below the basic required level.",
+            "Need to focus more during lectures."
+        ],
+        "21-30": [
+            "Slight improvement, but not enough.",
+            "Some ideas reached but incomplete.",
+            "Progressing slowly.",
+            "Partial understanding.",
+            "Need to consolidate information."
+        ],
+        "31-40": [
+            "Average level, still needs improvement.",
+            "Unstable understanding.",
+            "Better than before but incomplete.",
+            "Getting by, but not strong.",
+            "Need more focus on details."
+        ],
+        "41-50": [
+            "Almost halfway there.",
+            "Acceptable level but not strong.",
+            "Clear basics are forming.",
+            "Still needs additional work.",
+            "Medium result, lacks stability."
+        ],
+        "51-60": [
+            "Good level, starting to rely on understanding.",
+            "Good comprehension of the material.",
+            "Acceptable and above average performance.",
+            "Close to being good.",
+            "Clear progress, needs consolidation."
+        ],
+        "61-70": [
+            "Good and organized level.",
+            "Understanding is much clearer now.",
+            "Mostly correct performance.",
+            "Close to Very Good.",
+            "Evident effort in solving."
+        ],
+        "71-80": [
+            "Strong and capable level.",
+            "Stable thinking about the material.",
+            "High and stable performance.",
+            "Clear mastery.",
+            "A result to be proud of."
+        ],
+        "81-90": [
+            "Excellent level, nearing professional mastery.",
+            "Mastered the details of the material.",
+            "Very strong performance.",
+            "Deep and clear understanding.",
+            "Advanced and organized work."
+        ],
+        "91-99": [
+            "Nearly perfect level.",
+            "Strong control over the material.",
+            "Very precise performance.",
+            "Almost no mistakes.",
+            "Very high level."
+        ],
+        "100": [
+            "Perfect score! Mastery achieved.",
+            "Ideal performance in every detail.",
+            "Complete control over the material.",
+            "Zero mistakes.",
+            "Exceptional level."
+        ]
+    }
+}
