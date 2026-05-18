@@ -583,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                         </div>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 12px; margin-right: 12px; margin-left: 12px; flex-shrink: 0;">
+                    <div class="quiz-status-wrapper">
                         <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
                     </div>
                     <div class="item-action">
@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                     </div>
                 </div>
-                <div style="display: flex; align-items: center; gap: 12px; margin-right: 12px; margin-left: 12px; flex-shrink: 0;">
+                <div class="quiz-status-wrapper">
                     <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
                 </div>
                 <div class="item-action">

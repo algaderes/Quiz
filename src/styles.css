@@ -364,7 +364,7 @@ body {
 }
 
 .row-card .item-details { flex: 1; min-width: 0; }
-.row-card .item-title { font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
+.row-card .item-title { font-size: 1rem; font-weight: 600; margin-bottom: 2px; unicode-bidi: plaintext; text-align: start; }
 .row-card .item-meta { font-size: 0.82rem; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
 
 .path-chip {
@@ -490,7 +490,7 @@ body {
 .bar-card:hover .icon-circle { transform: scale(1.08); }
 
 .bar-card .item-info { flex: 1; min-width: 0; }
-.bar-card .item-title { font-weight: 700; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-card .item-title { font-weight: 700; font-size: 1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; unicode-bidi: plaintext; text-align: start; }
 .bar-card .item-meta { font-size: 0.78rem; color: var(--text-secondary); margin-top: 1px; }
 
 .bar-card .item-action { opacity: 0.3; transition: all 0.2s; }
@@ -768,3 +768,50 @@ body {
     font-weight: 600;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* Status Badge Wrapper */
+.quiz-status-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 12px;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+/* Mobile Responsive Grid for Cards */
+@media (max-width: 600px) {
+    .item-card, .file-card {
+        display: grid !important;
+        grid-template-columns: auto 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        align-items: center !important;
+        gap: 8px 12px !important;
+    }
+    
+    .item-card .icon-circle, .file-card .icon-circle {
+        grid-column: 1 !important;
+        grid-row: 1 / span 2 !important;
+        align-self: center !important;
+    }
+    
+    .item-card .item-details, .file-card .item-info {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+    
+    .quiz-status-wrapper {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        margin: 0 !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+    }
+    
+    .item-card .item-action, .file-card .item-action {
+        grid-column: 3 !important;
+        grid-row: 1 / span 2 !important;
+        align-self: center !important;
+    }
+}
+
