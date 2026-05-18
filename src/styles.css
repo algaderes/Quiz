@@ -769,49 +769,79 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Status Badge Wrapper */
-.quiz-status-wrapper {
+/* Card Body and Row Structure */
+.item-card, .file-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.card-row-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-right: 12px;
-    margin-left: 12px;
-    flex-shrink: 0;
+    width: 100%;
 }
 
-/* Mobile Responsive Grid for Cards */
-@media (max-width: 600px) {
-    .item-card, .file-card {
-        display: grid !important;
-        grid-template-columns: auto 1fr auto !important;
-        grid-template-rows: auto auto !important;
-        align-items: center !important;
-        gap: 8px 12px !important;
-    }
-    
-    .item-card .icon-circle, .file-card .icon-circle {
-        grid-column: 1 !important;
-        grid-row: 1 / span 2 !important;
-        align-self: center !important;
-    }
-    
-    .item-card .item-details, .file-card .item-info {
-        grid-column: 2 !important;
-        grid-row: 1 !important;
-    }
-    
-    .quiz-status-wrapper {
-        grid-column: 2 !important;
-        grid-row: 2 !important;
-        margin: 0 !important;
-        display: flex !important;
-        justify-content: flex-start !important;
-    }
-    
-    .item-card .item-action, .file-card .item-action {
-        grid-column: 3 !important;
-        grid-row: 1 / span 2 !important;
-        align-self: center !important;
-    }
+.card-row-title .item-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.4;
+    flex: 1;
+    min-width: 0;
+    unicode-bidi: plaintext;
+    text-align: start;
+}
+
+.card-row-title .icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-transparent);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.item-card:hover .icon-circle,
+.file-card:hover .icon-circle {
+    background: var(--accent-color);
+    color: #000;
+    transform: scale(1.05);
+}
+
+.card-row-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.card-date {
+    display: inline-flex;
+    align-items: center;
+}
+
+.card-row-location {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 

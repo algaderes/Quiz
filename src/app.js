@@ -572,19 +572,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isBars) {
             return `
                 <a href="${fileUrl}" class="bar-card file-card">
-                    <div class="file-icon icon-circle">
-                        ${ICONS.file}
-                    </div>
-                    <div class="item-info">
-                        <div class="item-title">${title}</div>
-                        <div class="item-meta" style="flex-wrap: wrap; gap: 8px;">
-                            <span>${date} ${ht('at')} ${time}</span>
+                    <div class="card-body">
+                        <div class="card-row-title">
+                            <div class="icon-circle">
+                                ${ICONS.file}
+                            </div>
+                            <div class="item-title">${title}</div>
+                        </div>
+                        <div class="card-row-meta">
+                            <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
+                            <span class="card-date">${date} ${ht('at')} ${time}</span>
                             ${prog.qText ? `<span class="quiz-qcount-chip">${prog.qText}</span>` : ''}
                             ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                         </div>
-                    </div>
-                    <div class="quiz-status-wrapper">
-                        <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
+                        ${file.path ? `
+                        <div class="card-row-location">
+                            <span class="path-chip">${file.path}</span>
+                        </div>` : ''}
                     </div>
                     <div class="item-action">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -595,20 +599,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return `
             <a href="${fileUrl}" class="row-card item-card">
-                <div class="icon-circle">
-                    ${ICONS.file}
-                </div>
-                <div class="item-details">
-                    <div class="item-title">${title}</div>
-                    <div class="item-meta" style="flex-wrap: wrap; gap: 8px;">
-                        <span>${date} ${ht('at')} ${time}</span>
-                        ${file.path ? `<span class="path-chip">${file.path}</span>` : ''}
+                <div class="card-body">
+                    <div class="card-row-title">
+                        <div class="icon-circle">
+                            ${ICONS.file}
+                        </div>
+                        <div class="item-title">${title}</div>
+                    </div>
+                    <div class="card-row-meta">
+                        <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
+                        <span class="card-date">${date} ${ht('at')} ${time}</span>
                         ${prog.qText ? `<span class="quiz-qcount-chip">${prog.qText}</span>` : ''}
                         ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                     </div>
-                </div>
-                <div class="quiz-status-wrapper">
-                    <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
+                    ${file.path ? `
+                    <div class="card-row-location">
+                        <span class="path-chip">${file.path}</span>
+                    </div>` : ''}
                 </div>
                 <div class="item-action">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24"><polyline points="9 18 15 12 9 6"></polyline></svg>
