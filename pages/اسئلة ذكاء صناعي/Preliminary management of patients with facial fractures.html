@@ -853,7 +853,7 @@ function safeBtoa(str) {
 
 var state={correct:0,wrong:0,total:35,elapsedAccumulated:0},quizMode="instant",isMistaking=false,originalCorrect=0;
 var lastScrollTop = 0;
-var globalSettings = {"autoSaveEnabled":false,"autoSaveDelay":1500,"quizAutoPinOnRotate":false,"defaultRenderMode":"live","renderLiveInterval":300,"renderDelayInterval":2000,"defaultExportPath":"S:/Ikhtibar.com","exportLang":"ar","exportType":"website","multipleMode":"separate","exportPagesOnly":true,"exportCreateParent":false};
+var globalSettings = {"autoSaveEnabled":false,"autoSaveDelay":1500,"quizAutoPinOnRotate":false,"defaultRenderMode":"live","renderLiveInterval":300,"renderDelayInterval":2000,"defaultExportPath":"S:/Ikhtibar.com","exportLang":"ar","exportType":"website","multipleMode":"separate","exportPagesOnly":false,"exportCreateParent":false};
 // Load global settings from LocalStorage if they exist
 try {
   if (typeof localStorage !== "undefined" && localStorage !== null) {
@@ -2447,12 +2447,25 @@ function applyPageScale(scale) {
     wrapper.style.zoom = scale;
     // Also update CSS variable for the floating nav
     document.documentElement.style.setProperty('--page-scale', scale);
+    
+    // Sync the active class and display value in the dropdown
+    var pctText = Math.round(scale * 100) + '%';
+    var display = document.getElementById('pageSizeDisplayVal');
+    if (display) display.innerText = pctText;
+    
+    var opts = document.querySelectorAll('.page-size-option');
+    opts.forEach(function(o){
+        if (o.innerText.trim() === pctText) {
+            o.classList.add('active');
+        } else {
+            o.classList.remove('active');
+        }
+    });
 }
 
 function applyInitialPageScale() {
-    var scale = 1.15;
-    var display = document.getElementById('pageSizeDisplayVal');
-    if(display) display.innerText = '115%';
+    var isPhone = window.innerWidth <= 600;
+    var scale = isPhone ? 0.85 : 1.15;
     applyPageScale(scale);
 }
 
@@ -2620,11 +2633,10 @@ function initQuizApp() {
         var hb = document.getElementById("hamBtn");
         
         // Apply target scale based on orientation
-        var targetScale = e.matches ? 0.85 : 1.0;
+        var isPhone = window.innerWidth <= 600;
+        var targetScale = isPhone ? 0.85 : (e.matches ? 0.85 : 1.15);
         if (typeof applyPageScale === 'function') {
             applyPageScale(targetScale);
-            var select = document.getElementById('pageSizeDisplayVal');
-            if (select) select.innerText = Math.round(targetScale * 100) + '%';
         }
 
         // Auto-pin logic
