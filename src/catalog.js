@@ -5,57 +5,62 @@ var IKHTIBAR_CATALOG = {
       "title": "كوز 1",
       "path": "اورثو/اسئلة د. احمد",
       "full_path": "pages/اورثو/اسئلة د. احمد/كوز 1.html",
-      "last_modified": "2026-05-21T11:57:23.541Z",
+      "last_modified": "2026-05-21T12:46:35.135Z",
       "questionCount": 10,
       "isListMode": false,
-      "categories": []
+      "categories": [],
+      "author": ""
     },
     {
       "name": "كوز 2.html",
       "title": "كوز 2",
       "path": "اورثو/اسئلة د. احمد",
       "full_path": "pages/اورثو/اسئلة د. احمد/كوز 2.html",
-      "last_modified": "2026-05-21T11:57:23.547Z",
+      "last_modified": "2026-05-21T12:46:35.140Z",
       "questionCount": 10,
       "isListMode": false,
-      "categories": []
+      "categories": [],
+      "author": ""
     },
     {
       "name": "مد 1.html",
       "title": "مد 1",
       "path": "اورثو/اسئلة د. احمد",
       "full_path": "pages/اورثو/اسئلة د. احمد/مد 1.html",
-      "last_modified": "2026-05-21T11:57:23.536Z",
+      "last_modified": "2026-05-21T12:46:35.124Z",
       "questionCount": 20,
       "isListMode": false,
-      "categories": []
+      "categories": [],
+      "author": ""
     },
     {
       "name": "مد 2 العملي.html",
       "title": "مد 2 العملي",
       "path": "اورثو/اسئلة د. احمد",
       "full_path": "pages/اورثو/اسئلة د. احمد/مد 2 العملي.html",
-      "last_modified": "2026-05-21T11:57:23.554Z",
+      "last_modified": "2026-05-21T12:46:35.146Z",
       "questionCount": 10,
       "isListMode": false,
-      "categories": []
+      "categories": [],
+      "author": "د. احمد"
     },
     {
       "name": "مد 2 النظري.html",
       "title": "مد 2 النظري",
       "path": "اورثو/اسئلة د. احمد",
       "full_path": "pages/اورثو/اسئلة د. احمد/مد 2 النظري.html",
-      "last_modified": "2026-05-21T11:57:23.560Z",
+      "last_modified": "2026-05-21T12:46:35.156Z",
       "questionCount": 30,
       "isListMode": false,
-      "categories": []
+      "categories": [],
+      "author": "د.احمد"
     },
     {
       "name": "اسئلة اورثو شاملة - خفيفة.html",
       "title": "اسئلة اورثو شاملة - خفيفة",
       "path": "اورثو/اسئلة ذكاء صناعي",
       "full_path": "pages/اورثو/اسئلة ذكاء صناعي/اسئلة اورثو شاملة - خفيفة.html",
-      "last_modified": "2026-05-21T11:57:23.528Z",
+      "last_modified": "2026-05-21T12:46:35.115Z",
       "questionCount": 90,
       "isListMode": true,
       "categories": [
@@ -3182,14 +3187,15 @@ var IKHTIBAR_CATALOG = {
             }
           ]
         }
-      ]
+      ],
+      "author": "غياث"
     },
     {
       "name": "اسئلة اورثو شاملة - موسعة.html",
       "title": "اسئلة اورثو شاملة - موسعة",
       "path": "اورثو/اسئلة ذكاء صناعي",
       "full_path": "pages/اورثو/اسئلة ذكاء صناعي/اسئلة اورثو شاملة - موسعة.html",
-      "last_modified": "2026-05-21T11:57:23.502Z",
+      "last_modified": "2026-05-21T12:46:35.091Z",
       "questionCount": 349,
       "isListMode": true,
       "categories": [
@@ -13384,7 +13390,8 @@ var IKHTIBAR_CATALOG = {
             }
           ]
         }
-      ]
+      ],
+      "author": "عباس"
     }
   ]
 };

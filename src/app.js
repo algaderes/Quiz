@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loading: "جاري تحميل الفهرس...", error: "تعذر تحميل الفهرس. تأكد من وجود ملف catalog.json.",
             noQuizzes: "لم يتم العثور على اختبارات بعد.", noResults: 'لم يتم العثور على نتائج لـ "{query}"',
             emptyFolder: "المجلد فارغ", emptyFolderDesc: "لا توجد اختبارات تطابق مسارك الحالي ومعايير البحث.",
-            home: "الرئيسية", folder: "مجلد", at: "في", about: "مالك", search: "بحث",
+            home: "الرئيسية", folder: "مجلد", at: "في", about: "مالك", search: "بحث", by: "بواسطة",
             toggleTheme: "تغيير المظهر", langSwitch: "English",
             authorName: "عباس عبد الرزاق", authorTitle: "مطور ومصمم واجهات",
             projectBio: "مشروع <b>اختبار</b> هو مبادرة تهدف لتسهيل عملية المراجعة والاختبار الذاتي للطلاب.",
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loading: "Loading catalog...", error: "Could not load catalog. Make sure catalog.json exists.",
             noQuizzes: "No quizzes found yet.", noResults: 'No results found for "{query}"',
             emptyFolder: "Folder is empty", emptyFolderDesc: "No quizzes match your current path and search criteria.",
-            home: "Home", folder: "Folder", at: "at", about: "Author", search: "Search",
+            home: "Home", folder: "Folder", at: "at", about: "Author", search: "Search", by: "By",
             toggleTheme: "Toggle Theme", langSwitch: "العربية",
             authorName: "Abbas Abdul-Razzaq", authorTitle: "Developer & UI Designer",
             projectBio: "<b>Ikhtibar Project</b> is an initiative aimed at simplifying self-review and testing for students.",
@@ -328,7 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const title = (file.title || '').toLowerCase();
             const name = (file.name || '').toLowerCase();
             const path = (file.path || '').toLowerCase();
-            return title.includes(state.searchQuery) || name.includes(state.searchQuery) || path.includes(state.searchQuery);
+            const author = (file.author || '').toLowerCase();
+            return title.includes(state.searchQuery) || name.includes(state.searchQuery) || path.includes(state.searchQuery) || author.includes(state.searchQuery);
         });
     }
 
@@ -582,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card-row-meta">
                             <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
                             <span class="card-date">${date} ${ht('at')} ${time}</span>
+                            ${file.author ? `<span class="quiz-author-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="opacity:0.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>${file.author}</span>` : ''}
                             ${prog.qText ? `<span class="quiz-qcount-chip">${prog.qText}</span>` : ''}
                             ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                         </div>
@@ -609,6 +611,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card-row-meta">
                         <span class="quiz-status-badge ${prog.badgeClass}">${prog.badgeText}</span>
                         <span class="card-date">${date} ${ht('at')} ${time}</span>
+                        ${file.author ? `<span class="quiz-author-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="opacity:0.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>${file.author}</span>` : ''}
                         ${prog.qText ? `<span class="quiz-qcount-chip">${prog.qText}</span>` : ''}
                         ${prog.detailText ? `<span class="quiz-detail-text">${prog.detailText}</span>` : ''}
                     </div>
