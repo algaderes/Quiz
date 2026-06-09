@@ -220,7 +220,7 @@ body {
 
 .clear-btn {
     position: absolute;
-    left: 12px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
@@ -234,7 +234,7 @@ body {
     transition: opacity 0.2s;
 }
 
-[dir="rtl"] .clear-btn { left: auto; right: auto; left: 12px; }
+[dir="rtl"] .clear-btn { right: auto; left: 12px; }
 
 .clear-btn:hover { color: var(--text-primary); }
 

@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Try hub_i18n.json (in same folder or src/ folder)
             let response;
-            try { response = await fetch('hub_i18n.json?t=' + Date.now()); } catch(e) {}
+            try { response = await fetch('hub_i18n.json?t=' + Date.now()); } catch (e) { }
             if (!response || !response.ok) {
-                try { response = await fetch('src/hub_i18n.json?t=' + Date.now()); } catch(e) {}
+                try { response = await fetch('src/hub_i18n.json?t=' + Date.now()); } catch (e) { }
             }
             if (response && response.ok) {
                 const data = await response.json();
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateLayout();
                 translateStatic();
             }
-        } catch(e) { /* Use inline fallback silently */ }
+        } catch (e) { /* Use inline fallback silently */ }
     })();
 
     // Translation helper
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 try {
                     const hResponse = await fetch('src/history.json?t=' + Date.now());
                     state.history = await hResponse.json();
-                } catch(e) {}
+                } catch (e) { }
             }
 
             hideStates();
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function safeBtoa(str) {
-        try { return btoa(unescape(encodeURIComponent(str || ""))); } catch(e) { return ""; }
+        try { return btoa(unescape(encodeURIComponent(str || ""))); } catch (e) { return ""; }
     }
 
     function getTitleKey(title) {
@@ -475,7 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function getQuizProgressInfo(file) {
         const titleKey = getTitleKey(file.title || file.name);
         const qCount = file.questionCount || 0;
-        
+
         let status = 'not_started'; // 'not_started' | 'in_progress' | 'completed'
         let detailText = '';
         let badgeClass = 'status-not-started';
@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const catCount = cats.length;
             let completedCats = 0;
             let inProgressCats = 0;
-            
+
             for (let i = 0; i < catCount; i++) {
                 const catBest = localStorage.getItem("amosha_cat_best_" + titleKey + "_" + i);
                 if (catBest !== null) {
@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-            
+
             if (completedCats === catCount && catCount > 0) {
                 status = 'completed';
                 badgeClass = 'status-completed';
@@ -516,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Single file quiz
             const bestScore = localStorage.getItem("amosha_cat_best_" + titleKey + "_global");
             const progressStr = localStorage.getItem("amosha_progress_" + titleKey + "_0");
-            
+
             if (bestScore !== null) {
                 status = 'completed';
                 badgeClass = 'status-completed';
@@ -525,32 +525,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 status = 'in_progress';
                 badgeClass = 'status-in-progress';
                 badgeText = lang === 'ar' ? 'قيد التقدم' : 'In Progress';
-                
+
                 try {
                     const prog = JSON.parse(progressStr);
                     if (prog && prog.selections) {
                         const answered = Object.keys(prog.selections).length;
                         detailText = lang === 'ar' ? `تمت الإجابة ${answered}/${qCount}` : `Answered ${answered}/${qCount}`;
                     }
-                } catch(e) {}
+                } catch (e) { }
             }
         }
-        
+
         // Build question text
         let qText = '';
         if (qCount > 0) {
             if (file.isListMode) {
                 const catCount = (file.categories || []).length;
-                qText = lang === 'ar' ? 
-                    `${qCount} سؤال (${catCount} محاضرة)` : 
+                qText = lang === 'ar' ?
+                    `${qCount} سؤال (${catCount} محاضرة)` :
                     `${qCount} Questions (${catCount} Lectures)`;
             } else {
-                qText = lang === 'ar' ? 
-                    `${qCount} سؤال` : 
+                qText = lang === 'ar' ?
+                    `${qCount} سؤال` :
                     `${qCount} Questions`;
             }
         }
-        
+
         return {
             status,
             badgeClass,
@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const time = new Date(dateStr).toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
         const fileUrl = file.full_path + '?lang=' + lang;
         const title = file.title || file.name;
-        
+
         const prog = getQuizProgressInfo(file);
 
         if (isBars) {
